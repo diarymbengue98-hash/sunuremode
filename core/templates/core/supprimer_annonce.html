@@ -1,0 +1,14 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<h2>Supprimer l’annonce</h2>
+
+<p>Es-tu sûr de vouloir supprimer <strong>{{ annonce.titre }}</strong> ?</p>
+
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">❌ Oui, supprimer</button>
+    <a href="{% url 'mes_annonces' %}">Annuler</a>
+</form>
+
+{% endblock %}

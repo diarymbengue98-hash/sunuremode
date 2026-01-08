@@ -1,0 +1,25 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<h1>Publier une annonce</h1>
+<p>
+Publiez gratuitement votre vêtement et donnez-lui une seconde vie.
+Seuls les vêtements sont acceptés (pas de chaussures, sacs ou bijoux).
+</p>
+
+<div class="publier-container">
+    <form method="POST" enctype="multipart/form-data" class="publier-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <button type="submit" class="btn-publier">
+            Publier l’annonce
+        </button>
+    </form>
+</div>
+
+{% endblock %}
+
+annonce = form.save(commit=False)
+annonce.auteur = request.user
+annonce.save()

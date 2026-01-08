@@ -1,0 +1,46 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<h1>{{ annonce.titre }}</h1>
+
+{% if annonce.image %}
+    <img src="{{ annonce.image.url }}" alt="{{ annonce.titre }}" style="max-width:400px;">
+{% endif %}
+{% if annonce.auteur == user %}
+    <a href="{% url 'modifier_annonce' annonce.id %}">Modifier</a>
+    <a href="{% url 'supprimer_annonce' annonce.id %}">Supprimer</a>
+{% endif %}
+
+<p><strong>Description :</strong></p>
+<p>{{ annonce.description }}</p>
+
+<p><strong>Catégorie :</strong> {{ annonce.categorie }}</p>
+<p><strong>Prix :</strong> {{ annonce.prix }} FCFA</p>
+
+<p>
+    <strong>Annonce publiée par :</strong> {{ annonce.auteur.username }}
+</p>
+<a href="#" class="btn-decouvrir">Contacter le vendeur</a>
+<a href="{% url 'home' %}">← Retour à l’accueil</a>
+{% endblock %}
+<hr>
+<a href="https://wa.me/221{{ annonce.auteur.profil.telephone }}?text=Bonjour,%20je%20suis%20intéressé%20par%20votre%20annonce%20{{ annonce.titre }}"
+   target="_blank"
+   class="btn-whatsapp">
+   📱Contacter sur WhatsApp
+</a>
+
+<h3>Vendeur</h3>
+
+{% if annonce.auteur.profil.photo %}
+    <img src="{{ annonce.auteur.profil.photo.url }}" width="100">
+{% endif %}
+
+<p><strong>Nom :</strong> {{ annonce.auteur.username }}</p>
+<p><strong>Téléphone :</strong> {{ annonce.auteur.profil.telephone }}</p>
+{% if user.is_authenticated %}
+ <!-- bouton -->
+    <p><strong>Téléphone :</strong> {{ annonce.auteur.profil.telephone }}</p>
+{% else %}
+    <p>Connectez-vous pour voir le numéro</p>
+{% endif %}

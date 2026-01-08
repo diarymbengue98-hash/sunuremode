@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SuñuReMode</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static 'core/style.css' %}">
+    
+</head>
+<body>
+{% if messages %}
+    {% for message in messages %}
+        <div class="alert alert-success">
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endif %}
+
+<header class="navbar">
+    <div class="logo">SuñuReMode</div>
+
+    <nav>
+        <a href="{% url 'home' %}">Accueil</a>
+        <a href="{% url 'publier' %}">Publier</a>
+        <a href="{% url 'mes_annonces' %}">Mes annonces</a>
+        <a href="#decouvrir">Découvrir</a>
+    </nav>
+ {% if user.is_authenticated %}
+    <a href="{% url 'profil' %}">Mon profil</a>
+{% endif %}
+
+</header>
+
+
+<main>
+    
+    {% block content %}{% endblock %}
+    {% if user.is_authenticated %}
+    <a href="{% url 'mes_annonces' %}">Mes annonces</a>
+    <a href="{% url 'logout' %}">Déconnexion</a>
+{% else %}
+    <a href="{% url 'login' %}">Connexion</a>
+{% endif %}
+
+
+<p>
+SuñuReMode est une plateforme sénégalaise de mise en relation.
+Les échanges se font directement entre vendeurs et acheteurs.
+</p>
+
+</main>
+
+<footer>
+    <a href="/cgu/">CGU</a> |
+    <a href="/confidentialite/">Confidentialité</a> |
+    <a href="/mentions/">Mentions légales</a>
+</footer>
+
+</body>
+</html>
+
+
+
+
+

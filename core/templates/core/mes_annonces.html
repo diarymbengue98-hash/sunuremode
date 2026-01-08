@@ -1,0 +1,22 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<h1>Mes annonces</h1>
+
+<div class="mes-annonces">
+    {% for annonce in annonces %}
+        <div class="annonce-card">
+            <h3>{{ annonce.titre }}</h3>
+            <p class="prix">{{ annonce.prix }} FCFA</p>
+
+            <div class="actions">
+                <a href="{% url 'detail_annonce' annonce.id %}" class="btn btn-view">Voir</a>
+                <a href="{% url 'modifier_annonce' annonce.id %}" class="btn btn-edit">Modifier</a>
+                <a href="{% url 'supprimer_annonce' annonce.id %}" class="btn btn-delete">Supprimer</a>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+
+{% endblock %}

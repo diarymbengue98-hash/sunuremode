@@ -1,0 +1,37 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<section class="publier">
+    <h1>Publier un vêtement</h1>
+    <p>Ajoute un vêtement de mode circulaire sur SuñuReMode</p>
+
+    <!-- Aperçu image -->
+    <div class="image-preview-container">
+        <img id="imagePreview" style="display:none;" />
+    </div>
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Publier</button>
+    </form>
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const input = document.getElementById("id_image");
+    const preview = document.getElementById("imagePreview");
+
+    if (input) {
+        input.addEventListener("change", function () {
+            const file = this.files[0];
+            if (file) {
+                preview.src = URL.createObjectURL(file);
+                preview.style.display = "block";
+            }
+        });
+    }
+});
+</script>
+{% endblock %}
+

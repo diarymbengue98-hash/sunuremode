@@ -1,0 +1,53 @@
+{% extends 'core/base.html' %}
+{% block content %}
+
+<h1>Mon profil</h1>
+
+<p><strong>Nom d’utilisateur :</strong> {{ user.username }}</p>
+<p><strong>Email :</strong> {{ user.email }}</p>
+
+<hr>
+
+<h3>Photo de profil</h3>
+{% if profil.photo %}
+    <img src="{{ profil.photo.url }}" alt="Photo de profil" class="photo-profil" style="max-width:150px;">
+{% else %}
+    <p>Aucune photo de profil</p>
+{% endif %}
+
+<hr>
+
+<p><strong>Téléphone :</strong> {{ profil.telephone }}</p>
+
+{% if profil.telephone %}
+    <a href="https://wa.me/221{{ profil.telephone }}"
+       class="btn-whatsapp"
+       target="_blank">
+        Contacter sur WhatsApp
+    </a>
+{% endif %}
+
+<hr>
+
+<h3>Modifier mon profil</h3>
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Mettre à jour</button>
+</form>
+
+<hr>
+
+<h2>Mes annonces ({{ annonces.count }})</h2>
+
+{% for annonce in annonces %}
+    <div>
+        <h3>{{ annonce.titre }}</h3>
+        <p>{{ annonce.prix }} FCFA</p>
+        <a href="{% url 'detail_annonce' annonce.id %}">Voir</a>
+    </div>
+{% empty %}
+    <p>Aucune annonce publiée.</p>
+{% endfor %}
+
+{% endblock %}

@@ -1,0 +1,87 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+
+<section class="hero">
+    <h1>Bienvenue sur SuñuReMode</h1>
+    <h1>La mode circulaire sénégalaise</h1>
+    <p>
+        Achetez et vendez des vêtements traditionnels
+        (Wax, Bazin, Djezner, Tchioup).
+    </p>
+    <a href="#decouvrir" class="btn-decouvrir">Découvrir</a>
+</section>
+
+<section class="engagement">
+    <h3>Pourquoi SuñuReMode ?</h3>
+    <ul>
+        <li>♻️ Mode circulaire sénégalaise</li>
+        <li>👗 Vêtements traditionnels & modernes</li>
+        <li>🤝 Mise en relation directe</li>
+    </ul>
+</section>
+
+<h2>Annonces récentes</h2>
+
+{% if annonces %}
+    <ul>
+        {% for annonce in annonces %}
+        
+        
+
+            <li class="annonce-card">
+ <a href="{% url 'detail_annonce' annonce.id %}">
+    <h3>{{ annonce.titre }}</h3>
+ </a>
+ <p>
+    <strong>Publié par :</strong> {{ annonce.auteur.username }}
+</p>
+
+ {% if annonce.image %}
+    <img src="{{ annonce.image.url }}" alt="{{ annonce.titre }}" class="annonce-img">
+ {% endif %}
+
+                <p>{{ annonce.description }}</p>
+                <p><strong>Catégorie :</strong> {{ annonce.categorie }}</p>
+                <p><strong>Prix :</strong> {{ annonce.prix }} FCFA</p>
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>Aucune annonce pour le moment.</p>
+{% endif %}
+
+
+<section id="decouvrir" class="decouvrir">
+    <h3>Vêtements disponibles</h3>
+
+    <div class="vetements">
+    <a href="{% url 'categorie' 'wax' %}" class="card">
+    <h4>Wax</h4>
+    <p>Tissu emblématique porté au quotidien comme lors des grandes occasions.</p>
+</a>
+
+        <a href="{% url 'categorie' 'bazin' %}" class="card">
+            <h4>Bazin</h4>
+            <p>Vêtement noble très prisé pour les cérémonies et événements importants.</p>
+         </a>
+
+        <a href="{% url 'categorie' 'djezner' %}" class="card">
+            <h4>Djezner</h4>
+            <p>Version améliorée et plus moderne du bazin, élégante et raffinée.</p>
+
+            <a href="{% url 'categorie' 'tchioup' %}" class="card">
+            <h4>Tchioup</h4>
+            <p>Tenue traditionnelle colorée, populaire et fortement ancrée dans la culture.</p>
+            <a href="{% url 'categorie' 'tissu' %}" class="card">
+            <h4>Tissu</h4>
+           <p>Tissu emblématique porté lors des grandes occasions.</p>
+</a>
+    </div>
+</section>
+<section class="cta">
+    <h5>Donnez une seconde vie à vos vêtements</h5>
+    <a href="#" class="btn-decouvrir">Commencer</a>
+</section>
+
+{% endblock %}

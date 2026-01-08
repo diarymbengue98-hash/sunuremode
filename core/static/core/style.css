@@ -1,0 +1,513 @@
+/* Couleurs Sénégal */
+:root {
+    --vert-senegal: #00853f;
+    --jaune-senegal: #fcd116;
+    --rouge-senegal: #e31b23;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f9f9f9;
+    color: #222;
+}
+
+/* HERO */
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+    background: linear-gradient(
+        to right,
+        #00853f, /* vert */
+        #fcd116, /* jaune */
+        #e31b23  /* rouge */
+    );
+    color: white;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    max-width: 600px;
+    margin: 0 auto 30px;
+}
+
+/* BOUTONS */
+.btn-decouvrir {
+    display: inline-block;
+    background-color: #e31b23; /* rouge Sénégal */
+    color: white;
+    padding: 14px 36px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    border-radius: 30px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+.btn-decouvrir:hover {
+    background-color: #b9151b;
+    transform: translateY(-3px);
+}
+
+/* VALEURS */
+.valeurs {
+    padding: 60px 20px;
+    background-color: white;
+}
+
+.valeurs ul {
+    list-style: none;
+    padding: 0;
+}
+
+.valeurs li {
+    margin: 10px 0;
+    font-size: 1.1rem;
+}
+
+/* TYPES */
+.types {
+    padding: 60px 20px;
+    background-color: #fcd116;
+}
+
+.types h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    max-width: 800px;
+    margin: auto;
+}
+
+.card {
+    background-color: white;
+    padding: 40px 20px;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 12px;
+    font-size: 1.2rem;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+
+/* CTA */
+.cta {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #00853f;
+    color: white;
+}
+section {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.valeurs, .types, .cta {
+    margin-top: 40px;
+}
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    background: linear-gradient(
+        90deg,
+        #00853f,
+        #fcd116,
+        #e31b23
+    ); /* vert - jaune - rouge */
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: white;
+}
+
+.navbar nav a {
+    margin-left: 20px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: opacity 0.3s;
+}
+
+.navbar nav a:hover {
+    opacity: 0.7;
+}
+/* HERO */
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    max-width: 700px;
+    margin: auto;
+    font-size: 1.1rem;
+}
+
+.btn-decouvrir {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 12px 30px;
+    background-color: #e31b23; /* rouge Sénégal */
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 6px;
+}
+
+.btn-decouvrir:hover {
+    background-color: #006b32;
+}
+
+/* SECTION DECOUVRIR */
+.decouvrir {
+    padding: 60px 40px;
+    background-color: #f9f9f9;
+}
+
+.decouvrir h2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.vetements {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background-color: rgb(237, 203, 9);
+    padding: 40px 20px;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 12px;
+    font-size: 1.2rem;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+
+.card h3 {
+    color: #e31b23; /* rouge Sénégal */
+    margin-bottom: 10px;
+}
+.card {
+    text-decoration: none;
+    color: inherit;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    transition: 0.2s;
+}
+.publier {
+    max-width: 600px;
+    margin: auto;
+}
+
+.form-publier {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-publier input,
+.form-publier textarea,
+.form-publier select {
+    padding: 10px;
+}
+
+.form-publier button {
+    background: #00853f;
+    color: white;
+    padding: 12px;
+    border: none;
+    cursor: pointer;
+}
+.annonce-detail {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+}
+
+.annonce-detail h1 {
+    color: #00853f; /* vert Sénégal */
+}
+
+.prix {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ce1126; /* rouge Sénégal */
+}
+
+.categorie {
+    margin-bottom: 20px;
+}
+
+.description, .vendeur {
+    margin-top: 25px;
+}
+
+.btn-retour {
+    display: inline-block;
+    margin-top: 30px;
+    text-decoration: none;
+    color: white;
+    background: #fcd116; /* jaune Sénégal */
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: bold;
+}
+.annonce-image {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+.annonce-card {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+.annonce-img {
+    width: 100%;
+    max-height: 250px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+.btn-whatsapp {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 12px 18px;
+    background-color: #25D366;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+}
+.btn-whatsapp:hover {
+    background-color: #1ebe5d;
+}
+.whatsapp-fixed {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+}
+
+button, .btn {
+    width: 100%;
+    padding: 14px;
+    font-size: 16px;
+}
+.mes-annonces {
+    max-width: 900px;
+    margin: 30px auto;
+    display: grid;
+    gap: 15px;
+}
+
+.annonce-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 15px 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: transform 0.2s ease;
+}
+
+.annonce-card:hover {
+    transform: translateY(-2px);
+}
+
+.annonce-card h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.prix {
+    color: #2e7d32;
+    font-weight: bold;
+    margin: 8px 0;
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    text-decoration: none;
+    color: white;
+}
+
+.btn-view {
+    background: #4caf50;
+}
+
+.btn-edit {
+    background: #ff9800;
+}
+
+.btn-delete {
+    background: #e53935;
+}
+.publier-container {
+    max-width: 700px;
+    margin: 40px auto;
+}
+
+.publier-form {
+    background: #fff;
+    padding: 25px 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+}
+
+.publier-form p {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.publier-form label {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.publier-form input,
+.publier-form textarea,
+.publier-form select {
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+.publier-form input[type="file"] {
+    padding: 5px;
+}
+
+.btn-publier {
+    background: linear-gradient(90deg, #4caf50, #ff9800);
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    font-weight: bold;
+}
+
+.btn-publier:hover {
+    opacity: 0.9;
+}
+/* ===================== */
+/* RESPONSIVE – MOBILE */
+/* ===================== */
+
+@media (max-width: 768px) {
+
+    body {
+        font-size: 15px;
+    }
+
+    h1 {
+        font-size: 22px;
+        text-align: center;
+    }
+
+    /* Publier */
+    .publier-container {
+        margin: 15px;
+    }
+
+    .publier-form {
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    .publier-form input,
+    .publier-form textarea,
+    .publier-form select {
+        font-size: 16px; /* évite le zoom iOS */
+    }
+
+    .btn-publier {
+        font-size: 17px;
+        padding: 14px;
+        border-radius: 10px;
+    }
+
+    /* Mes annonces */
+    .annonce-card {
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+
+    .annonce-actions {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .annonce-actions a {
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+    }
+
+}
+.publier {
+    max-width: 600px;
+    margin: auto;
+}
+
+.image-preview-container {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+#imagePreview {
+    max-width: 100%;
+    max-height: 280px;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+}

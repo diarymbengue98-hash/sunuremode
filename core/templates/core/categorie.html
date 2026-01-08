@@ -1,0 +1,16 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<section class="categorie">
+    <h1>{{ type_vetement|title }}</h1>
+
+    <p>
+        Découvrez les vêtements de type <strong>{{ type_vetement }}</strong>
+        disponibles sur SuñuReMode.
+    </p>
+
+    <p style="margin-top:20px; color:gray;">
+        (Les articles apparaîtront ici bientôt)
+    </p>
+</section>
+{% endblock %}
