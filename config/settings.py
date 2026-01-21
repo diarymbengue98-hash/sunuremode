@@ -28,10 +28,12 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get("SECRET_KEY")
 
-if not SECRET_KEY:
-    raise Exception("SECRET_KEY is missing")
+
+SECRET_KEY = os.environ.get(
+    "SECRET_KEY",
+    "unsafe-secret-key-for-build-only"
+)
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
