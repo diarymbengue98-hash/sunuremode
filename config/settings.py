@@ -30,14 +30,16 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
+if not SECRET_KEY:
+    raise Exception("SECRET_KEY is missing")
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = [
-    "sunuremode.onrender.com",
-    "sunuremode.com",
-    "www.sunuremode.com",
-]
+ALLOWED_HOSTS = os.environ.get(
+    "ALLOWED_HOSTS",
+    "sunuremode.onrender.com,sunuremode.com,www.sunuremode.com"
+).split(",")
 
 
 # Application definition
