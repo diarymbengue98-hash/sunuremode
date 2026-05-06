@@ -22,7 +22,7 @@ STATICFILES_DIRS = [
 
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / 'media'
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
@@ -95,25 +95,23 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 DATABASE_URL = os.environ.get("DATABASE_URL")
 
-if DATABASE_URL:
-    # Production (Render)
+
+
+if os.environ.get("DATABASE_URL"):
+    import dj_database_url
     DATABASES = {
-        "default": dj_database_url.config(
-            default=DATABASE_URL,
+        'default': dj_database_url.config(
             conn_max_age=600,
             ssl_require=True
         )
     }
 else:
-    # Local (SQLite)
     DATABASES = {
-        "default": {
-            "ENGINE": "django.db.backends.sqlite3",
-            "NAME": BASE_DIR / "db.sqlite3",
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
         }
     }
-
-
 
 # Password validation
 # https://docs.djangoproject.com/en/6.0/ref/settings/#auth-password-validators
